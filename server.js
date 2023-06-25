@@ -12,6 +12,11 @@ app.listen(PORT, () => {
     console.log("Server Listening on PORT:", PORT);
 });
 
+process.on('SIGINT', () => {
+  console.info("Interrupted")
+  process.exit(0)
+})
+
 const index = require('./src/routes/default');
 app.use('/', index);
 
