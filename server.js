@@ -22,3 +22,6 @@ app.use('/', index);
 
 const jemersonMaiaRoute = require('./src/routes/jemerson-maia');
 app.use('/jemerson-maia', jemersonMaiaRoute);
+
+const jonathanSeehagenRoute = require('./src/routes/jonathan-seehagen');
+app.use('/jonathan-seehagen', jonathanSeehagenRoute);
