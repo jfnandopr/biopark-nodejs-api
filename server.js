@@ -20,5 +20,11 @@ process.on('SIGINT', () => {
 const index = require('./src/routes/default');
 app.use('/', index);
 
+const guilhermeRoute = require('./src/routes/guilherme');
+app.use('/guilherme', guilhermeRoute);
+
 const jemersonMaiaRoute = require('./src/routes/jemerson-maia');
 app.use('/jemerson-maia', jemersonMaiaRoute);
+
+
+
