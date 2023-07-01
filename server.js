@@ -26,3 +26,5 @@ app.use('/jemerson-maia', jemersonMaiaRoute);
 const cintyaMiottoRoute = require('./src/routes/cintya-miotto');
 app.use('/cintya-miotto', cintyaMiottoRoute);
 
+const joseMariaRoute = require('./src/routes/jose-maria');
+app.use('/jose-maria', joseMariaRoute);
