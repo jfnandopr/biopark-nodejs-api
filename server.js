@@ -23,5 +23,8 @@ app.use('/', index);
 const jemersonMaiaRoute = require('./src/routes/jemerson-maia');
 app.use('/jemerson-maia', jemersonMaiaRoute);
 
+const matiasArenhardRoute = require('./src/routes/matias-arenhard');
+app.use('/matias-arenhard', matiasArenhardRoute);
+
 const joseMariaRoute = require('./src/routes/jose-maria');
 app.use('/jose-maria', joseMariaRoute);
