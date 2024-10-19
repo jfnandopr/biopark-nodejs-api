@@ -1,0 +1,38 @@
+name: CI/CD
+
+on:
+  push:
+    branches: 
+      - '*'
+  create:
+    tags:
+      - v*
+
+jobs:
+  release:
+    name: Criar Release
+    runs-on: ubuntu-latest
+        
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 21
+
+      - name: Compile
+        run: npm ci
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+          
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: false
+          file: Dockerfile
+          tags: api
